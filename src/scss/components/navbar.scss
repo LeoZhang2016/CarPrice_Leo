@@ -1,0 +1,151 @@
+// Navbar Styles
+@use "../abstracts//variables";
+@use "../abstracts/mixins";
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+
+  .left-section {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  .right-section {
+    display: flex;
+    align-items: center;
+    nav {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+
+        li {
+          display: flex;
+          align-items: center;
+          position: relative;
+          margin-right: 20px;
+          cursor: pointer;
+          font-size: 16px;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &.valuations {
+            display: flex;
+            justify-items: stretch;
+            cursor: pointer;
+
+            .dropdown-arrow {
+              margin-left: 5px;
+              font-size: 15px; // 中等大小的三角形
+              color: #000;
+            }
+
+            .dropdown-menu {
+              display: none;
+              position: absolute;
+              top: 100%;
+              left: 50%;
+              transform: translateX(-50%);
+              min-width: 200px; // 菜单宽度足够宽
+              background-color: #fff;
+              box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+              list-style: none;
+              padding: 10px;
+
+              li {
+                cursor: pointer;
+              }
+            }
+
+            &.active {
+              .dropdown-menu {
+                display: flex;
+                flex-direction: column;
+              }
+            }
+          }
+
+          &.sign-in-button {
+            margin-left: auto;
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            
+            @include mixins.button(variables.$red,variables.$white, 3.0rem, 1.1rem, 0.3rem, 0,2rem);
+            &:hover {
+             background-color: variables.$dark_red; 
+           }
+            
+          }
+        }
+      }
+    }
+
+    @include mixins.responsive(small) {
+      // display: none;
+      display: flex;
+      flex-direction: column;
+      width: 0;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #333;
+      overflow-x: hidden;
+      transition: 0.3s;
+      z-index: 1;
+    }
+    
+  }
+
+
+
+
+ .open {
+    width: 80%;
+  }
+
+  &__bread {
+    // background: red;
+    display:  none;
+
+    @include mixins.responsive(small) {
+      display: block;
+   }
+    // @include mixins.responsive(medium) {
+    //    display: block;
+    // }
+
+    // @include mixins.responsive(small) {
+    //     display:block;
+    // }
+
+    // @include mixins.responsive(xsmall) {
+    //     display:block;
+    // }
+  }
+}
+
+

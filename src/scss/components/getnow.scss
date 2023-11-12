@@ -1,0 +1,36 @@
+
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+.get__container {
+    width:100%;
+    background: variables.$red;
+    height: 5rem;
+    margin: 1rem 0 1rem 0 ;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    &__report {
+        font-weight: 400s;
+        font-size:  1.2rem;
+        color:  variables.$white;
+    }
+
+    &__buttonBox {
+      margin-left: 2rem;
+       &__button{       
+
+            //            button($bgColor, $textColor, $height, $font-size, $bdr, $paddingVertical, $paddingHorizontal)
+       @include mixins.button(variables.$white, variables.$red, 2.4rem, 1rem, 1.8rem, 0,1rem);
+       &:hover {
+           background-color: variables.$dark_red; 
+           color: variables.$white;
+        }
+       }
+        
+    }
+
+    
+}

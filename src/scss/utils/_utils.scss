@@ -1,0 +1,67 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+
+// .btn-default {
+//   background: variables.$blue;
+//   color: variables.$white;
+//   text-decoration: none;
+//   height: 4rem;
+//   line-height: 4rem;
+//   display: inline-block;
+//   font-size: 1.3rem;
+//   font-weight:  400;
+//   border-radius: .3rem;
+//   padding: 0 2rem;
+//   outline: auto;
+//   cursor: pointer;
+//   text-transform: uppercase;
+// }
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  // padding-left: 1.5rem;
+  // padding-right: 1.5rem;
+  @include mixins.responsive(large) {
+     max-width: 100%;
+    //  padding: 0 5rem;
+  }
+
+  @include mixins.responsive(medium) {
+      max-width: 100%;
+      // padding: 0 4rem;
+   }
+
+   @include mixins.responsive(small) {
+      max-width: 100%;
+      // padding: 0 2rem;
+   }
+
+   @include mixins.responsive(small) {
+      max-width: 100%;
+      // padding: 0 1.5rem;
+   }
+}
+
+.btn {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.btn-default { 
+    //             button($color, $textColor,$height,$font-size,$bdr,$paddingVertical,$paddingHorizontal)
+   @include mixins.button(variables.$blue,variables.$white, 3.2rem, 1rem, 0.3rem, 0,2rem);
+   &:hover {
+    background-color: variables.$dark_blue; 
+  }
+}
+
+
+.btn-normal { 
+    //             button($color, $hovercolor, $textColor,$height,$font-size,$bdr,$paddingVertical,$paddingHorizontal)
+   @include mixins.button(variables.$red,variables.$white, 3.2rem, 1rem, 0.3rem, 0,2rem);
+   &:hover {
+    background-color: variables.$dark_red; 
+  }
+}

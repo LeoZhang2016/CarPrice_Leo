@@ -1,0 +1,12 @@
+
+.content {
+    margin: 1rem 2rem 2rem 2rem;
+    // background: pink;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    &_container {
+        // background: pink;
+    }
+}

@@ -1,0 +1,71 @@
+@use "../abstracts/variables";
+
+
+.footer {
+    position: relative;
+    width: 100%;
+    bottom: 0rem;
+    height: 4.5rem;
+    background-color: variables.$white;     
+    color: #444; 
+    padding: 1.5rem; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 15rem;
+  
+
+    &__links {
+        display: flex;
+        justify-content: space-between;
+      a {
+        margin-right: .1rem;
+        margin-left: .1rem;
+        color: variables.$blue; 
+        text-decoration: none; 
+       
+  
+        &:last-child {
+          margin-right: 0; 
+        }
+      }
+
+      &__sep{
+        color:black;
+      }
+    }
+  
+    // 第二部分（版权信息）
+    &__copyright {
+      font-size: 14px; // 设置文字大小
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &__year {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  
+    // 第三部分（社交媒体图标）
+    .social-icons {
+      a {
+        color: #333333; // 设置社交媒体图标颜色
+        text-decoration: none; // 去掉下划线
+        margin-right: 10px; // 设置社交媒体图标之间的右边距
+  
+        &:last-child {
+          margin-right: 0; // 去掉最后一个社交媒体图标的右边距
+        }
+      }
+    }
+  }
+  

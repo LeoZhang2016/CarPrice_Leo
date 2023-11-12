@@ -1,0 +1,18 @@
+// CustomInput.scss
+
+$border-color: #ccc;
+$placeholder-font: 14px;
+$input-size: 400px;
+
+.custom-input {
+  border: 1px solid $border-color;
+  font-size: $placeholder-font;
+  width: $input-size;
+  padding: 8px;
+  border-radius: 4px;
+
+  &:focus {
+    outline: none;
+    border-color: blue; // 修改输入框获取焦点时的边框颜色
+  }
+}
